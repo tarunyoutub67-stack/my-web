@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWeb Solutions | Premium SEO, Graphics & AI Agency</title>
+    <title>SkyWeb Solutions | Premium Web Dev, SEO & AI Agency</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,6 @@
         * { scroll-behavior: smooth; box-sizing: border-box; }
         body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: white; line-height: 1.6; overflow-x: hidden; }
 
-        /* 🌌 BACKGROUND ANIMATION */
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, transparent 40%),
@@ -32,7 +31,6 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), var(--secondary)); border-radius: 10px; }
 
-        /* HEADER */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 20px 8%; position: sticky; top: 0; 
@@ -40,16 +38,15 @@
             z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); 
         }
         .logo { 
-            font-size: 28px; font-weight: 900; font-family: 'Outfit';
+            font-size: 26px; font-weight: 900; font-family: 'Outfit';
             background: linear-gradient(90deg, var(--primary), var(--secondary)); 
             -webkit-background-clip: text; color: transparent; text-decoration: none;
         }
         nav a { margin-left: 30px; color: #94a3b8; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 15px; }
         nav a:hover { color: white; }
 
-        /* HERO SECTION */
         .hero { text-align: center; padding: 140px 20px; }
-        .hero h1 { font-size: clamp(40px, 8vw, 70px); font-family: 'Outfit'; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(35px, 8vw, 65px); font-family: 'Outfit'; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
         .hero p { font-size: clamp(16px, 4vw, 22px); color: #94a3b8; margin-bottom: 40px; }
 
         .btn { 
@@ -61,25 +58,33 @@
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(236, 72, 153, 0.6); }
 
-        /* SECTIONS */
-        .section { padding: 100px 8%; text-align: center; }
+        /* 🏃 RUNNING SERVICES (MARQUEE) */
+        .marquee-container {
+            width: 100%; overflow: hidden; background: rgba(255, 255, 255, 0.02);
+            padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; white-space: nowrap; margin: 40px 0;
+        }
+        .marquee-content { display: flex; animation: scroll-left 20s linear infinite; }
+        .marquee-content span { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; margin: 0 40px; text-transform: uppercase; color: #cbd5e1; }
+        .marquee-content span i { color: var(--secondary); margin-right: 10px; }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .section { padding: 80px 8%; text-align: center; }
         .big-text { 
             font-size: clamp(30px, 5vw, 45px); font-weight: 800; font-family: 'Outfit';
             background: linear-gradient(90deg, var(--primary), var(--secondary)); 
             -webkit-background-clip: text; color: transparent; margin-bottom: 30px; 
         }
 
-        /* SERVICES GRID */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
         .card { 
             background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.05); 
             padding: 50px 30px; border-radius: 30px; transition: 0.4s;
         }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255,255,255,0.06); }
         .card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; display: block; }
-        .card h3 { font-size: 24px; margin-bottom: 15px; font-family: 'Outfit'; }
 
-        /* CONTACT FORM */
         .contact-box { 
             max-width: 600px; margin: 50px auto 0; padding: 40px;
             background: rgba(15, 23, 42, 0.6); border-radius: 32px; 
@@ -90,14 +95,6 @@
             border: 1px solid #1e293b; background: #030712; color: white; font-family: inherit;
         }
 
-        /* 🤖 CHATBOT UI */
-        .bot-trigger { 
-            position: fixed; bottom: 30px; left: 30px; 
-            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
-            width: 60px; height: 60px; border-radius: 18px; 
-            display: flex; justify-content: center; align-items: center; 
-            font-size: 28px; color: white; cursor: pointer; z-index: 1001; 
-        }
         #bot-window { 
             position: fixed; bottom: 105px; left: 30px; width: 330px; 
             background: #0f172a; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); 
@@ -107,98 +104,93 @@
         .chat-header { background: linear-gradient(90deg, var(--primary), var(--secondary)); padding: 18px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
         .chat-body { height: 350px; padding: 20px; overflow-y: auto; background: #030712; display: flex; flex-direction: column; gap: 12px; }
         .bot-msg { background: #1e293b; padding: 15px; border-radius: 18px 18px 18px 5px; font-size: 14px; }
-        .option-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--primary); padding: 12px; cursor: pointer; border-radius: 12px; text-align: left; transition: 0.3s; font-weight: 600; margin-top: 5px; font-family: inherit; }
-        .option-btn:hover { background: var(--primary); }
+        .option-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--primary); padding: 12px; cursor: pointer; border-radius: 12px; text-align: left; transition: 0.3s; font-weight: 600; margin-top: 5px; }
 
-        .whatsapp { 
-            position: fixed; bottom: 30px; right: 30px; background: #25D366; 
-            width: 60px; height: 60px; border-radius: 18px; 
-            display: flex; justify-content: center; align-items: center; 
-            font-size: 32px; color: white; text-decoration: none; z-index: 1001;
-        }
+        .bot-trigger { position: fixed; bottom: 30px; left: 30px; background: linear-gradient(135deg, var(--primary), var(--secondary)); width: 60px; height: 60px; border-radius: 18px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: white; cursor: pointer; z-index: 1001; }
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 18px; display: flex; justify-content: center; align-items: center; font-size: 32px; color: white; text-decoration: none; z-index: 1001; }
 
-        /* 🏠 FOOTER */
-        footer { 
-            padding: 80px 8% 40px; background: #020617; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;
-        }
-        .footer-logo { font-size: 28px; font-weight: 900; font-family: 'Outfit'; margin-bottom: 20px; display: block; color: white; text-decoration: none; }
-        .footer-links { margin-bottom: 30px; }
-        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 20px; font-size: 15px; transition: 0.3s; }
-        .footer-links a:hover { color: white; }
-        .socials { margin-bottom: 30px; font-size: 20px; }
-        .socials i { margin: 0 15px; color: #94a3b8; cursor: pointer; transition: 0.3s; }
-        .socials i:hover { color: var(--secondary); }
-        .copy { font-size: 13px; color: #475569; letter-spacing: 1px; }
+        footer { padding: 80px 8% 40px; background: #020617; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .footer-logo { font-size: 26px; font-weight: 900; font-family: 'Outfit'; margin-bottom: 20px; display: block; color: white; text-decoration: none; }
+        .copy { font-size: 13px; color: #475569; }
 
-        @media (max-width: 768px) {
-            header { padding: 15px 5%; } nav { display: none; }
-            .hero h1 { font-size: 40px; }
-        }
+        @media (max-width: 768px) { header { padding: 15px 5%; } nav { display: none; } .hero h1 { font-size: 38px; } }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">SkyWeb</a>
+    <a href="#" class="logo">SkyWeb Solutions</a>
     <nav>
-        <a href="#about">About</a>
+        <a href="#">Home</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>SkyWeb Solutions<br><span style="color: var(--secondary)">Digital Growth Partners</span></h1>
-    <p>Premium Graphic Designing • SEO Expert • Neural AI Chatbots</p>
-    <a href="#contact" class="btn">Get Started Now</a>
+    <h1>SkyWeb Solutions<br><span style="color: var(--secondary)">Next-Gen Digital Agency</span></h1>
+    <p>Premium Web Development • SEO Experts • High-End Graphic Design • AI Neural Bots</p>
+    <a href="#contact" class="btn">Launch Your Website</a>
 </section>
 
-<section id="about" class="section">
-    <h2 class="big-text">What We Do</h2>
-    <p style="font-size: 20px; color: #cbd5e1; max-width: 800px; margin: 0 auto;">
-        SkyWeb Solutions is a full-service digital agency. We specialize in making your business look professional and rank higher on Google using the latest AI and Design technologies.
-    </p>
+<div class="marquee-container">
+    <div class="marquee-content">
+        <span><i class="fas fa-code"></i> Website Development</span>
+        <span><i class="fas fa-search"></i> SEO Optimization</span>
+        <span><i class="fas fa-paint-brush"></i> Graphic Designing</span>
+        <span><i class="fas fa-robot"></i> AI Neural Chatbots</span>
+        <span><i class="fas fa-ad"></i> Digital Marketing</span>
+        <span><i class="fas fa-code"></i> Website Development</span>
+        <span><i class="fas fa-search"></i> SEO Optimization</span>
+        <span><i class="fas fa-paint-brush"></i> Graphic Designing</span>
+        <span><i class="fas fa-robot"></i> AI Neural Chatbots</span>
+        <span><i class="fas fa-ad"></i> Digital Marketing</span>
+    </div>
+</div>
+
+<section id="services" class="section">
+    <h2 class="big-text">Expert Services</h2>
     <div class="services-grid">
+        <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Development</h3>
+            <p>We build high-speed, modern, and SEO-friendly websites using the latest frameworks (HTML, CSS, JS, Vercel).</p>
+        </div>
         <div class="card">
             <i class="fas fa-palette"></i>
             <h3>Graphic Designing</h3>
-            <p>Premium logos, social media posts, and brand identity that makes you stand out from the competition.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-search-dollar"></i>
-            <h3>SEO & Ads</h3>
-            <p>Rank on the first page of Google. We optimize your website and run high-conversion ad campaigns.</p>
+            <p>Premium logos, professional social media posts, and brand identity that makes your business look elite.</p>
         </div>
         <div class="card">
             <i class="fas fa-robot"></i>
             <h3>AI Chatbots</h3>
-            <p>Automate your customer support and sales with 24/7 intelligent neural AI agents.</p>
+            <p>Automate your sales and customer queries 24/7 with our smart neural AI assistants.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
-    <h2 class="big-text">Start Your Project</h2>
+    <h2 class="big-text">Contact Our Team</h2>
     <div class="contact-box">
         <form action="https://formsubmit.co/contact@skywebsolutions.in" method="POST">
-            <input type="text" name="name" placeholder="Full Name / Business Name" required>
+            <input type="text" name="name" placeholder="Business Name" required>
             <input type="tel" name="phone" placeholder="WhatsApp Number" required>
-            <textarea name="message" rows="5" placeholder="Tell us about your requirements..."></textarea>
-            <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+            <textarea name="message" rows="5" placeholder="Explain your website or graphic design needs..."></textarea>
+            <button type="submit" class="btn" style="width: 100%;">Get Expert Consultation</button>
         </form>
     </div>
 </section>
 
 <div id="bot-window">
     <div class="chat-header">
-        SkyWeb AI Assistant 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px;">&times;</span>
+        SkyWeb Neural AI 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px;">&times;</span>
     </div>
     <div id="bot-chat" class="chat-body">
-        <div class="bot-msg">Welcome to SkyWeb Solutions! How can we help you grow today?</div>
+        <div class="bot-msg">Hi! I am the SkyWeb AI. Do you need a new website, graphic design, or SEO help?</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="option-btn" onclick="botAnswer('quote')">💰 Get a Free Quote</button>
+            <button class="option-btn" onclick="botAnswer('quote')">💰 Get Project Quote</button>
             <button class="option-btn" onclick="botAnswer('demo')">✨ View Live Demos</button>
-            <button class="option-btn" onclick="botAnswer('contact')">📞 Direct Contact Info</button>
+            <button class="option-btn" onclick="botAnswer('contact')">📞 Direct WhatsApp</button>
         </div>
     </div>
 </div>
@@ -208,19 +200,7 @@
 
 <footer>
     <a href="#" class="footer-logo">SkyWeb Solutions</a>
-    <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="socials">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-twitter"></i>
-    </div>
-    <div class="copy">© 2026 SKYWEB SOLUTIONS | ALL RIGHTS RESERVED</div>
+    <div class="copy">© 2026 SKYWEB SOLUTIONS | DESIGNED FOR GROWTH</div>
 </footer>
 
 <script>
@@ -233,11 +213,11 @@
         var c = document.getElementById('bot-chat');
         var msg = "";
         if(val === 'quote' || val === 'contact') {
-            msg = "<b>Grow your business today!</b> 🚀<br><br>" +
+            msg = "<b>Let's build something great!</b> 🚀<br><br>" +
                   "WhatsApp: <a href='https://wa.me/918968243267' style='color:#25D366; text-decoration:none;' target='_blank'>+91 89682 43267</a><br><br>" +
                   "Email: <a href='mailto:contact@skywebsolutions.in' style='color:#ec4899; text-decoration:none;'>contact@skywebsolutions.in</a>";
         } else if(val === 'demo') {
-            msg = "Check our live deployments:<br><br>🦷 <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899;'>Medical Demo</a><br>🏫 <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899;'>School Demo</a>";
+            msg = "Our Live Work:<br><br>🦷 <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899;'>Medical Demo</a><br>🏫 <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899;'>School Demo</a>";
         }
         c.innerHTML += `<div class="bot-msg" style="margin-top:10px;">${msg}</div>`;
         setTimeout(() => { c.scrollTop = c.scrollHeight; }, 50);
