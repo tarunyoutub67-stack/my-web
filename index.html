@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWeb Solutions | Global Digital Excellence</title>
+    <title>SkyWeb Solutions | Premium SEO, Graphics & AI Agency</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,30 +19,14 @@
         }
 
         * { scroll-behavior: smooth; box-sizing: border-box; }
-        
-        body { 
-            margin: 0; 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg); 
-            color: white; 
-            line-height: 1.6; 
-            overflow-x: hidden;
-        }
+        body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: white; line-height: 1.6; overflow-x: hidden; }
 
-        /* 🌈 ANIMATED GRADIENT BACKGROUND */
+        /* 🌌 BACKGROUND ANIMATION */
         body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, transparent 40%),
                         radial-gradient(circle at 80% 70%, #310a5d 0%, transparent 40%);
             z-index: -1;
-            animation: bgMove 15s ease infinite alternate;
-        }
-
-        @keyframes bgMove {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -52,40 +36,22 @@
         header { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 20px 8%; position: sticky; top: 0; 
-            background: rgba(3, 7, 18, 0.7); backdrop-filter: blur(20px); 
+            background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(20px); 
             z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); 
         }
         .logo { 
             font-size: 28px; font-weight: 900; font-family: 'Outfit';
             background: linear-gradient(90deg, var(--primary), var(--secondary)); 
-            -webkit-background-clip: text; color: transparent; 
+            -webkit-background-clip: text; color: transparent; text-decoration: none;
         }
         nav a { margin-left: 30px; color: #94a3b8; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 15px; }
-        nav a:hover { color: white; text-shadow: 0 0 15px var(--secondary); }
+        nav a:hover { color: white; }
 
         /* HERO SECTION */
-        .hero { 
-            text-align: center; padding: 160px 20px; 
-            position: relative;
-        }
-        .hero h1 { 
-            font-size: clamp(40px, 8vw, 70px); 
-            margin-bottom: 20px; font-family: 'Outfit'; 
-            font-weight: 900; line-height: 1.1;
-            animation: fadeInUp 1s ease;
-        }
-        .hero p { 
-            font-size: clamp(16px, 4vw, 22px); color: #94a3b8; 
-            margin-bottom: 45px; font-weight: 300; 
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
+        .hero { text-align: center; padding: 140px 20px; }
+        .hero h1 { font-size: clamp(40px, 8vw, 70px); font-family: 'Outfit'; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: clamp(16px, 4vw, 22px); color: #94a3b8; margin-bottom: 40px; }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* PREMIUM BUTTON */
         .btn { 
             padding: 16px 40px; border-radius: 100px; 
             background: linear-gradient(90deg, var(--primary), var(--secondary)); 
@@ -93,12 +59,9 @@
             display: inline-block; transition: 0.4s; border: none; cursor: pointer;
             box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
         }
-        .btn:hover { 
-            transform: translateY(-5px) scale(1.05); 
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.6); 
-        }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(236, 72, 153, 0.6); }
 
-        /* ABOUT & SERVICES BOXES */
+        /* SECTIONS */
         .section { padding: 100px 8%; text-align: center; }
         .big-text { 
             font-size: clamp(30px, 5vw, 45px); font-weight: 800; font-family: 'Outfit';
@@ -106,154 +69,180 @@
             -webkit-background-clip: text; color: transparent; margin-bottom: 30px; 
         }
 
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 32px; padding: 50px;
-            backdrop-filter: blur(10px);
-            transition: 0.4s;
-        }
-        .glass-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
-
-        .services-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; margin-top: 50px; 
-        }
+        /* SERVICES GRID */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .card { 
             background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 50px 30px; border-radius: 30px; transition: 0.4s; position: relative; overflow: hidden;
+            padding: 50px 30px; border-radius: 30px; transition: 0.4s;
         }
-        .card::before {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(168, 85, 247, 0.1), transparent);
-            transform: translateX(-100%); transition: 0.6s;
-        }
-        .card:hover::before { transform: translateX(100%); }
-        .card:hover { transform: translateY(-15px); border-color: var(--secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255,255,255,0.06); }
         .card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; display: block; }
+        .card h3 { font-size: 24px; margin-bottom: 15px; font-family: 'Outfit'; }
 
         /* CONTACT FORM */
         .contact-box { 
-            max-width: 600px; margin: 50px auto 0; padding: 50px;
+            max-width: 600px; margin: 50px auto 0; padding: 40px;
             background: rgba(15, 23, 42, 0.6); border-radius: 32px; 
             border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
         }
         input, textarea { 
             width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 16px; 
-            border: 1px solid #1e293b; background: #030712; color: white; 
-            font-size: 16px; transition: 0.3s; font-family: inherit;
+            border: 1px solid #1e293b; background: #030712; color: white; font-family: inherit;
         }
-        input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); outline: none; }
 
-        /* FLOATING UI */
+        /* 🤖 CHATBOT UI */
         .bot-trigger { 
             position: fixed; bottom: 30px; left: 30px; 
             background: linear-gradient(135deg, var(--primary), var(--secondary)); 
-            width: 65px; height: 65px; border-radius: 20px; /* Square with rounded corners for premium look */
+            width: 60px; height: 60px; border-radius: 18px; 
             display: flex; justify-content: center; align-items: center; 
-            font-size: 30px; cursor: pointer; z-index: 1000; transition: 0.3s;
+            font-size: 28px; color: white; cursor: pointer; z-index: 1001; 
         }
-        .bot-trigger:hover { transform: rotate(10deg) scale(1.1); }
-
         #bot-window { 
-            position: fixed; bottom: 110px; left: 30px; width: 350px; 
+            position: fixed; bottom: 105px; left: 30px; width: 330px; 
             background: #0f172a; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); 
-            display: none; flex-direction: column; overflow: hidden; z-index: 1000; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8); animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: none; flex-direction: column; overflow: hidden; z-index: 1001; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7); 
         }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .chat-header { background: linear-gradient(90deg, var(--primary), var(--secondary)); padding: 20px; font-weight: 700; display: flex; justify-content: space-between; }
-        .chat-body { height: 380px; padding: 20px; overflow-y: auto; background: #030712; display: flex; flex-direction: column; gap: 15px; }
-        .bot-msg { background: #1e293b; padding: 15px; border-radius: 20px 20px 20px 5px; font-size: 14px; border: 1px solid rgba(255,255,255,0.05); }
-        .option-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--primary); padding: 12px 20px; cursor: pointer; border-radius: 12px; text-align: left; transition: 0.3s; font-weight: 600; margin-top: 5px; }
-        .option-btn:hover { background: var(--primary); transform: translateX(8px); }
+        .chat-header { background: linear-gradient(90deg, var(--primary), var(--secondary)); padding: 18px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+        .chat-body { height: 350px; padding: 20px; overflow-y: auto; background: #030712; display: flex; flex-direction: column; gap: 12px; }
+        .bot-msg { background: #1e293b; padding: 15px; border-radius: 18px 18px 18px 5px; font-size: 14px; }
+        .option-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--primary); padding: 12px; cursor: pointer; border-radius: 12px; text-align: left; transition: 0.3s; font-weight: 600; margin-top: 5px; font-family: inherit; }
+        .option-btn:hover { background: var(--primary); }
 
         .whatsapp { 
             position: fixed; bottom: 30px; right: 30px; background: #25D366; 
-            width: 65px; height: 65px; border-radius: 20px; 
+            width: 60px; height: 60px; border-radius: 18px; 
             display: flex; justify-content: center; align-items: center; 
-            font-size: 35px; text-decoration: none; z-index: 1000; color: white; transition: 0.3s;
+            font-size: 32px; color: white; text-decoration: none; z-index: 1001;
         }
-        .whatsapp:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); }
 
-        footer { text-align: center; padding: 50px; opacity: 0.4; font-size: 14px; letter-spacing: 1px; }
+        /* 🏠 FOOTER */
+        footer { 
+            padding: 80px 8% 40px; background: #020617; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;
+        }
+        .footer-logo { font-size: 28px; font-weight: 900; font-family: 'Outfit'; margin-bottom: 20px; display: block; color: white; text-decoration: none; }
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 20px; font-size: 15px; transition: 0.3s; }
+        .footer-links a:hover { color: white; }
+        .socials { margin-bottom: 30px; font-size: 20px; }
+        .socials i { margin: 0 15px; color: #94a3b8; cursor: pointer; transition: 0.3s; }
+        .socials i:hover { color: var(--secondary); }
+        .copy { font-size: 13px; color: #475569; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
-            header { padding: 15px 5%; }
-            nav { display: none; }
-            .hero { padding: 100px 20px; }
-            .section { padding: 60px 5%; }
+            header { padding: 15px 5%; } nav { display: none; }
+            .hero h1 { font-size: 40px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">SkyWeb</div>
+    <a href="#" class="logo">SkyWeb</a>
     <nav>
-        <a href="#">Home</a>
-        <a href="#about">Philosophy</a>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Digital Excellence<br><span style="color: var(--secondary)">Redefined.</span></h1>
-    <p>We build high-performance digital ecosystems for the modern world.</p>
-    <a href="#contact" class="btn">Initiate Project</a>
+    <h1>SkyWeb Solutions<br><span style="color: var(--secondary)">Digital Growth Partners</span></h1>
+    <p>Premium Graphic Designing • SEO Expert • Neural AI Chatbots</p>
+    <a href="#contact" class="btn">Get Started Now</a>
 </section>
 
 <section id="about" class="section">
-    <div class="glass-card">
-        <h2 class="big-text">The SkyWeb Philosophy</h2>
-        <p style="font-size: 19px; color: #94a3b8; max-width: 850px; margin: 0 auto; font-weight: 300;">
-            We don't just create; we engineer. Every pixel and every line of code is optimized for <b>Impact, Speed, and Growth.</b> Our mission is to bridge the gap between human ideas and technological brilliance.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap;">
-            <div><span style="font-size: 32px; font-weight: 900; color: white;">100+</span><p style="color: var(--primary); font-size: 12px; margin: 0; letter-spacing: 2px;">DEPLOYMENTS</p></div>
-            <div><span style="font-size: 32px; font-weight: 900; color: white;">50+</span><p style="color: var(--primary); font-size: 12px; margin: 0; letter-spacing: 2px;">GLOBAL PARTNERS</p></div>
-            <div><span style="font-size: 32px; font-weight: 900; color: white;">24/7</span><p style="color: var(--primary); font-size: 12px; margin: 0; letter-spacing: 2px;">OVERSIGHT</p></div>
+    <h2 class="big-text">What We Do</h2>
+    <p style="font-size: 20px; color: #cbd5e1; max-width: 800px; margin: 0 auto;">
+        SkyWeb Solutions is a full-service digital agency. We specialize in making your business look professional and rank higher on Google using the latest AI and Design technologies.
+    </p>
+    <div class="services-grid">
+        <div class="card">
+            <i class="fas fa-palette"></i>
+            <h3>Graphic Designing</h3>
+            <p>Premium logos, social media posts, and brand identity that makes you stand out from the competition.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-search-dollar"></i>
+            <h3>SEO & Ads</h3>
+            <p>Rank on the first page of Google. We optimize your website and run high-conversion ad campaigns.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-robot"></i>
+            <h3>AI Chatbots</h3>
+            <p>Automate your customer support and sales with 24/7 intelligent neural AI agents.</p>
         </div>
     </div>
 </section>
 
-<section id="services" class="section">
-    <h2 class="big-text">Our Strategic Solutions</h2>
-    <div class="services-grid">
-        <div class="card"><i class="fas fa-layer-group"></i><h3>Elite Web Design</h3><p>Architecture that combines aesthetic luxury with unmatched speed.</p></div>
-        <div class="card"><i class="fas fa-brain"></i><h3>Neural AI Agents</h3><p>Advanced chatbots powered by deep-learning for 24/7 sales.</p></div>
-        <div class="card"><i class="fas fa-rocket"></i><h3>Growth Acceleration</h3><p>Data-driven SEO & Ads strategies that dominate the market.</p></div>
-    </div>
-</section>
-
 <section id="contact" class="section">
-    <h2 class="big-text">Connect With Us</h2>
-    <p>Let's architect your digital future.</p>
+    <h2 class="big-text">Start Your Project</h2>
     <div class="contact-box">
         <form action="https://formsubmit.co/contact@skywebsolutions.in" method="POST">
             <input type="text" name="name" placeholder="Full Name / Business Name" required>
-            <input type="tel" name="phone" placeholder="WhatsApp / Telegram Number" required>
-            <textarea name="message" rows="5" placeholder="Project Specifications"></textarea>
-            <button type="submit" class="btn" style="width: 100%;">Submit Brief</button>
+            <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+            <textarea name="message" rows="5" placeholder="Tell us about your requirements..."></textarea>
+            <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
         </form>
     </div>
 </section>
 
 <div id="bot-window">
     <div class="chat-header">
-        Sky-Neural Assistant 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px;">&times;</span>
+        SkyWeb AI Assistant 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px;">&times;</span>
     </div>
     <div id="bot-chat" class="chat-body">
-        <div class="bot-msg">Welcome to SkyWeb. I am your neural assistant. How can I assist your project today?</div>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <button class="option-btn" onclick="botAnswer('quote')">💎 Get Custom Quote</button>
+        <div class="bot-msg">Welcome to SkyWeb Solutions! How can we help you grow today?</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="option-btn" onclick="botAnswer('quote')">💰 Get a Free Quote</button>
             <button class="option-btn" onclick="botAnswer('demo')">✨ View Live Demos</button>
-            <button class="option-btn" onclick="botAnswer('direct')">📞 Direct Channels</button>
+            <button class="option-btn" onclick="botAnswer('contact')">📞 Direct Contact Info</button>
         </div>
     </div>
 </div>
 
 <div class="bot-trigger" onclick="toggleBot()"><i class="fas fa-robot"></i></div>
-<a href="https://wa.me/918968243267" class="whatsapp" target="_blank"><i class="fab
+<a href="https://wa.me/918968243267" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+    <a href="#" class="footer-logo">SkyWeb Solutions</a>
+    <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="socials">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-twitter"></i>
+    </div>
+    <div class="copy">© 2026 SKYWEB SOLUTIONS | ALL RIGHTS RESERVED</div>
+</footer>
+
+<script>
+    function toggleBot() {
+        var b = document.getElementById('bot-window');
+        b.style.display = (b.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function botAnswer(val) {
+        var c = document.getElementById('bot-chat');
+        var msg = "";
+        if(val === 'quote' || val === 'contact') {
+            msg = "<b>Grow your business today!</b> 🚀<br><br>" +
+                  "WhatsApp: <a href='https://wa.me/918968243267' style='color:#25D366; text-decoration:none;' target='_blank'>+91 89682 43267</a><br><br>" +
+                  "Email: <a href='mailto:contact@skywebsolutions.in' style='color:#ec4899; text-decoration:none;'>contact@skywebsolutions.in</a>";
+        } else if(val === 'demo') {
+            msg = "Check our live deployments:<br><br>🦷 <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899;'>Medical Demo</a><br>🏫 <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899;'>School Demo</a>";
+        }
+        c.innerHTML += `<div class="bot-msg" style="margin-top:10px;">${msg}</div>`;
+        setTimeout(() => { c.scrollTop = c.scrollHeight; }, 50);
+    }
+</script>
+
+</body>
+</html>
