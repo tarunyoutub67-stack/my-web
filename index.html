@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWeb Solutions | Premium Web Dev, SEO & AI Agency</title>
+    <title>Skywebsolutions | Premium Web Dev, SEO & AI Agency</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +12,10 @@
 
     <style>
         :root {
-            --primary: #a855f7;
-            --secondary: #ec4899;
-            --bg: #03050a; /* Darker, more cinematic background */
-            --card-bg: rgba(255, 255, 255, 0.02);
+            --primary: #3b82f6; /* Brilliant Blue */
+            --secondary: #06b6d4; /* Neon Cyan */
+            --bg: #020611; /* Deep Space Blue Background */
+            --card-bg: rgba(15, 23, 42, 0.4);
         }
 
         * { scroll-behavior: smooth; box-sizing: border-box; }
@@ -31,26 +31,26 @@
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('https://www.transparenttextures.com/patterns/stardust.png'), 
-                        radial-gradient(circle at 50% 50%, #0d111c 0%, var(--bg) 100%);
-            opacity: 0.6;
+                        radial-gradient(circle at 50% 50%, #0b1528 0%, var(--bg) 100%);
+            opacity: 0.8;
             z-index: -2;
             pointer-events: none;
         }
 
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
 
         /* HEADER - Minimalist */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 25px 5%; position: fixed; top: 0; width: 100%;
-            background: transparent; backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: transparent; backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); 
             transition: 0.3s;
         }
         .logo { 
-            font-size: 20px; font-weight: 900; font-family: 'Outfit'; letter-spacing: 2px;
+            font-size: 22px; font-weight: 900; font-family: 'Outfit'; letter-spacing: 1px;
             color: #fff; text-decoration: none; text-transform: uppercase;
             display: flex; align-items: center; gap: 10px;
         }
@@ -70,26 +70,26 @@
             position: relative; overflow: hidden;
         }
 
-        /* The Premium Central Element (Like the Corn) */
+        /* The Premium Central Element (Blue Glowing Orb) */
         .premium-orb {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 40vw; height: 40vw;
-            max-width: 500px; max-height: 500px;
-            background: linear-gradient(145deg, #a855f7, #ec4899, #3b82f6);
+            width: 45vw; height: 45vw;
+            max-width: 600px; max-height: 600px;
+            background: linear-gradient(145deg, #1d4ed8, #06b6d4, #3b82f6);
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            filter: blur(60px) opacity(0.35);
+            filter: blur(80px) opacity(0.4);
             animation: morph 12s ease-in-out infinite alternate;
             z-index: -1;
         }
         @keyframes morph {
-            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; filter: blur(60px) opacity(0.35); }
-            100% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; filter: blur(80px) opacity(0.5); }
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; filter: blur(80px) opacity(0.4); }
+            100% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; filter: blur(100px) opacity(0.6); }
         }
 
         .hero h1 { 
-            font-size: clamp(50px, 12vw, 140px); 
+            font-size: clamp(40px, 9vw, 110px); 
             font-family: 'Outfit'; font-weight: 900; 
             line-height: 0.9; margin: 0; 
             letter-spacing: -0.04em;
@@ -119,17 +119,18 @@
             font-size: 15px; letter-spacing: 1px;
             position: relative; z-index: 1;
         }
-        .btn:hover { background: #e2e8f0; transform: scale(1.05); }
+        .btn:hover { background: #e2e8f0; transform: scale(1.05); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
 
         /* 🏃 RUNNING SERVICES */
         .marquee-container {
-            width: 100%; overflow: hidden; background: transparent;
+            width: 100%; overflow: hidden; background: rgba(15, 23, 42, 0.3);
             padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex; white-space: nowrap; margin: 0;
+            backdrop-filter: blur(10px);
         }
         .marquee-content { display: flex; animation: scroll-left 25s linear infinite; }
-        .marquee-content span { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; margin: 0 40px; text-transform: uppercase; color: #334155; -webkit-text-stroke: 1px #475569; color: transparent; }
+        .marquee-content span { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; margin: 0 40px; text-transform: uppercase; -webkit-text-stroke: 1px #475569; color: transparent; }
         .marquee-content span i { color: var(--secondary); margin-right: 10px; -webkit-text-stroke: 0; }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -152,53 +153,53 @@
             padding: 50px 30px; border-radius: 30px; transition: 0.4s;
             text-align: left; backdrop-filter: blur(10px);
         }
-        .card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
-        .card i { font-size: 40px; color: white; margin-bottom: 25px; display: block; opacity: 0.8; }
+        .card:hover { transform: translateY(-10px); border-color: rgba(59, 130, 246, 0.4); background: rgba(30, 58, 138, 0.1); }
+        .card i { font-size: 40px; color: var(--secondary); margin-bottom: 25px; display: block; opacity: 0.9; }
         .card h3 { font-family: 'Outfit'; font-size: 24px; margin-bottom: 15px; }
         .card p { color: #94a3b8; }
 
         .contact-box { 
             max-width: 600px; margin: 50px auto 0; padding: 50px;
-            background: rgba(255, 255, 255, 0.02); border-radius: 30px; 
+            background: var(--card-bg); border-radius: 30px; 
             border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
         }
         input, textarea { 
             width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 12px; 
-            border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: white; font-family: inherit;
+            border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: white; font-family: inherit;
             transition: 0.3s;
         }
-        input:focus, textarea:focus { outline: none; border-color: var(--primary); background: rgba(0,0,0,0.6); }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); background: rgba(0,0,0,0.7); }
 
-        /* BOT & FLOATING ICONS (Kept identical in logic, refined in style) */
+        /* BOT & FLOATING ICONS */
         #bot-window { 
             position: fixed; bottom: 105px; left: 30px; width: 340px; 
-            background: #0f172a; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); 
+            background: #0f172a; border-radius: 24px; border: 1px solid rgba(59, 130, 246, 0.2); 
             display: none; flex-direction: column; overflow: hidden; z-index: 1001; 
             box-shadow: 0 25px 50px rgba(0,0,0,0.8); 
         }
         .chat-header { background: #1e293b; padding: 18px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .chat-body { height: 350px; padding: 20px; overflow-y: auto; background: #0b0f19; display: flex; flex-direction: column; gap: 12px; }
+        .chat-body { height: 350px; padding: 20px; overflow-y: auto; background: #020611; display: flex; flex-direction: column; gap: 12px; }
         .bot-msg { background: #1e293b; padding: 15px; border-radius: 18px 18px 18px 5px; font-size: 14px; border: 1px solid rgba(255,255,255,0.05); }
         .option-btn { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 12px; cursor: pointer; border-radius: 12px; text-align: left; transition: 0.3s; font-weight: 600; margin-top: 5px; }
-        .option-btn:hover { background: white; color: black; }
+        .option-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .bot-trigger { position: fixed; bottom: 30px; left: 30px; background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: black; cursor: pointer; z-index: 1001; transition: 0.3s; }
+        .bot-trigger { position: fixed; bottom: 30px; left: 30px; background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #0f172a; cursor: pointer; z-index: 1001; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         .bot-trigger:hover { transform: scale(1.1); }
         
-        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; color: white; text-decoration: none; z-index: 1001; transition: 0.3s; }
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; color: white; text-decoration: none; z-index: 1001; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         .whatsapp:hover { transform: scale(1.1); }
 
-        footer { padding: 60px 8% 40px; background: #020408; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
-        .footer-logo { font-size: 22px; font-weight: 900; font-family: 'Outfit'; margin-bottom: 20px; display: block; color: white; text-decoration: none; letter-spacing: 2px; }
+        footer { padding: 60px 8% 40px; background: #010308; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .footer-logo { font-size: 22px; font-weight: 900; font-family: 'Outfit'; margin-bottom: 20px; display: block; color: white; text-decoration: none; letter-spacing: 2px; text-transform: uppercase; }
         .copy { font-size: 13px; color: #475569; text-transform: uppercase; letter-spacing: 1px; }
 
-        @media (max-width: 768px) { header { padding: 15px 5%; background: #03050a; } nav { display: none; } .hero h1 { font-size: 65px; } .hero { padding-top: 80px; } }
+        @media (max-width: 768px) { header { padding: 15px 5%; background: rgba(2, 6, 17, 0.95); } nav { display: none; } .hero h1 { font-size: 50px; } .hero { padding-top: 80px; } }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">SkyWeb</a>
+    <a href="#" class="logo">Skywebsolutions</a>
     <nav>
         <a href="#">Home</a>
         <a href="#about">About</a>
@@ -210,7 +211,7 @@
 <section class="hero">
     <div class="premium-orb"></div>
     <div class="hero-content">
-        <h1>SKYWEB<br><span class="outline-text">REVOLUTIONIZED</span></h1>
+        <h1>SKYWEBSOLUTIONS<br><span class="outline-text">REVOLUTIONIZED</span></h1>
         <p>From Idea to Empire, it's Digital Architecture.</p>
         <a href="#contact" class="btn">Launch Your Website</a>
     </div>
@@ -235,12 +236,12 @@
     <div class="about-box">
         <h2 class="big-text">Our Philosophy</h2>
         <p style="font-size: 18px; color: #94a3b8; font-weight: 300;">
-            At <b>SkyWeb Solutions</b>, we don't just build websites; we architect digital growth. We combine modern design with powerful SEO and AI tools to ensure your business stays ahead of the curve in a crowded digital landscape.
+            At <b>Skywebsolutions</b>, we don't just build websites; we architect digital growth. We combine modern design with powerful SEO and AI tools to ensure your business stays ahead of the curve in a crowded digital landscape.
         </p>
         <div style="display: flex; justify-content: center; gap: 50px; margin-top: 40px; flex-wrap: wrap;">
-            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit';">100+</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">PROJECTS</p></div>
-            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit';">24/7</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">SUPPORT</p></div>
-            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit';">50+</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">GLOBAL CLIENTS</p></div>
+            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit'; color: white;">100+</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">PROJECTS</p></div>
+            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit'; color: white;">24/7</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">SUPPORT</p></div>
+            <div><h3 style="margin:0; font-size:40px; font-family:'Outfit'; color: white;">50+</h3><p style="margin:0; font-size:12px; color:#64748b; letter-spacing:2px;">GLOBAL CLIENTS</p></div>
         </div>
     </div>
 </section>
@@ -280,10 +281,10 @@
 
 <div id="bot-window">
     <div class="chat-header">
-        SkyWeb AI 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px;">&times;</span>
+        Skyweb AI 🤖 <span onclick="toggleBot()" style="cursor:pointer; font-size:24px; color: #94a3b8;">&times;</span>
     </div>
     <div id="bot-chat" class="chat-body">
-        <div class="bot-msg">Hi! I am the SkyWeb AI. Do you need a new website, graphic design, or SEO help?</div>
+        <div class="bot-msg">Hi! I am the Skywebsolutions AI. Do you need a new website, graphic design, or SEO help?</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <button class="option-btn" onclick="botAnswer('quote')">💰 Get Project Quote</button>
             <button class="option-btn" onclick="botAnswer('demo')">✨ View Live Demos</button>
@@ -296,8 +297,8 @@
 <a href="https://wa.me/918968243267" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer>
-    <a href="#" class="footer-logo">SkyWeb</a>
-    <div class="copy">© 2026 SKYWEB SOLUTIONS | DESIGNED FOR GROWTH</div>
+    <a href="#" class="footer-logo">Skywebsolutions</a>
+    <div class="copy">© 2026 SKYWEBSOLUTIONS | DESIGNED FOR GROWTH</div>
 </footer>
 
 <script>
@@ -311,12 +312,12 @@
         var msg = "";
         if(val === 'quote' || val === 'contact') {
             msg = "<b>Let's build something great!</b> 🚀<br><br>" +
-                  "WhatsApp: <a href='https://wa.me/918968243267' style='color:#fff; text-decoration:underline;' target='_blank'>+91 89682 43267</a><br><br>" +
-                  "Email: <a href='mailto:contact@skywebsolutions.in' style='color:#fff; text-decoration:underline;'>contact@skywebsolutions.in</a>";
+                  "WhatsApp: <a href='https://wa.me/918968243267' style='color:#3b82f6; text-decoration:underline;' target='_blank'>+91 89682 43267</a><br><br>" +
+                  "Email: <a href='mailto:contact@skywebsolutions.in' style='color:#3b82f6; text-decoration:underline;'>contact@skywebsolutions.in</a>";
         } else if(val === 'demo') {
-            msg = "Our Live Work:<br><br>🦷 <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#fff; text-decoration:underline;'>Medical Demo</a><br>🏫 <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#fff; text-decoration:underline;'>School Demo</a>";
+            msg = "Our Live Work:<br><br>🦷 <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#3b82f6; text-decoration:underline;'>Medical Demo</a><br>🏫 <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#3b82f6; text-decoration:underline;'>School Demo</a>";
         }
-        c.innerHTML += `<div class="bot-msg" style="margin-top:10px;">${msg}</div>`;
+        c.innerHTML += `<div class="bot-msg" style="margin-top:10px; border-left: 3px solid #3b82f6;">${msg}</div>`;
         setTimeout(() => { c.scrollTop = c.scrollHeight; }, 50);
     }
 
@@ -324,7 +325,7 @@
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(3, 5, 10, 0.9)';
+            header.style.background = 'rgba(2, 6, 17, 0.9)';
             header.style.padding = '15px 5%';
         } else {
             header.style.background = 'transparent';
